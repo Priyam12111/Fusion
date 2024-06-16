@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Home from '../components/Home';
 import Greet from '../components/Greet';
 import PdftoDoc from '../Tools/PdftoDoc';
+import PdfRotator from '../Tools/PdfRotator';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -37,6 +38,13 @@ function App() {
       element: <div className={`bg-${mode.bg}2 main`}>
         <Navbar mode={mode} toggle={toggle} />
         <AllApps mode={mode.bg} />
+      </div>
+    },
+    {
+      path: "/Auto-PDF-Rotater",
+      element: <div className={`bg-${mode.bg}2 main`}>
+        <Navbar mode={mode} toggle={toggle} />
+        <PdfRotator mode={mode.bg} />
       </div>
     },
     {

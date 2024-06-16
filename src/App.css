@@ -80,6 +80,18 @@ img {
   background-repeat: no-repeat;
   background-position: 10px 100px;
 }
+.apr {
+  background-image: url("https://s.smallpdf.com/static/cms/f/102628/300x180/7224b8be83/186604ddfd2697e3bce2.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 100px;
+}
+.pdfm {
+  background-image: url("https://www.adobe.com/dc-shared/assets/images/frictionless/how-to-images/merge-pdf-how-to.svg");
+  background-repeat: no-repeat;
+  background-position: 30px 100px;
+
+  background-size: 80%;
+}
 .main-container > .cards > .card:hover {
   background-color: rgb(31, 30, 29);
   color: black;
@@ -93,6 +105,9 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 900px;
+  justify-content: center;
+  margin: auto;
 }
 
 .search_container input[type="file"] {
