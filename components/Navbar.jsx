@@ -68,8 +68,17 @@ export default function ({ mode, toggle }) {
               </li>
             </ul>
             <li>
-              <button type="button" className="btn btn-primary" onClick={toggle}>{mode.btn}</button>
+              <div onClick={toggle}>
+                <input type="checkbox" className="checkbox" id="checkbox" />
+                <label htmlFor="checkbox" className="checkbox-label">
+                  <i className="fas fa-moon" />
+                  <i className="fas fa-sun" />
+                  <span className="ball" />
+                </label>
+              </div>
+
             </li>
+
             <form className="d-flex" role="search">
               <input
                 className="form-control me-2"

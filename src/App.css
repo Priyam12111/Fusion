@@ -138,4 +138,9 @@ img {
 .search_container button:hover {
   background-color: #45a049;
 }
+.heading {
+  cursor: pointer;
+}
 /* AllApps/ */
+
+/*  */
