@@ -16,7 +16,7 @@ PDF Fusion is an application that allows users to handle PDF operations such as 
 To install PDF Fusion, you can clone the repository and install the required dependencies.
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/Priyam12111/Fusion/
 cd pdf-fusion
 pip install -r requirements.txt
 ```
