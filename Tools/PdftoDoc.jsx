@@ -15,7 +15,7 @@ const PdftoDoc = () => {
             const formData = new FormData();
             formData.append('file', file);
 
-            const response = await axios.post('http://localhost:5000/convert', formData, {
+            const response = await axios.post('https://priyam144.pythonanywhere.com/convert', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
