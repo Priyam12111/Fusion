@@ -28,7 +28,7 @@ const AllApps = ({ mode }) => {
                 </div>
 
                 <div className="pdfm card">
-                    <NavLink to={"/Auto-PDF-Rotater"}>
+                    <NavLink to={"/PDF-Merge"}>
                         <h2>
                             PDF Merge
                         </h2>

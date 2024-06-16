@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import Navbar from '../components/Navbar'
 import Home from '../components/Home';
@@ -10,7 +10,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import AllApps from '../components/AllApps';
-
+import PDFmerger from '../Tools/PDFmerger';
 function App() {
   const [mode, setmode] = useState({
     bg: "light",
@@ -23,6 +23,7 @@ function App() {
       btn: mode.btn === "Dark" ? "Light" : "Dark",
     }));
   };
+
 
 
   const router = createBrowserRouter([
@@ -38,6 +39,13 @@ function App() {
       element: <div className={`bg-${mode.bg}2 main`}>
         <Navbar mode={mode} toggle={toggle} />
         <AllApps mode={mode.bg} />
+      </div>
+    },
+    {
+      path: "/PDF-Merge",
+      element: <div className={`bg-${mode.bg}2 main`}>
+        <Navbar mode={mode} toggle={toggle} />
+        <PDFmerger mode={mode.bg} />
       </div>
     },
     {

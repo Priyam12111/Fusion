@@ -39,7 +39,7 @@ export default function ({ mode, toggle }) {
                 </NavLink>
                 <ul className={`dropdown-menu bg-${mode.bg} text-${mode.bg === "dark" ? "light" : "dark"}`}>
                   <li>
-                    <NavLink className={`dropdown-item text-${mode.bg === "dark" ? "light" : "dark"}`} to="#">
+                    <NavLink className={`dropdown-item bg-${mode.bg} text-${mode.bg === "dark" ? "light" : "dark"}`} to="/PdftoDoc">
                       PDF to Word
                     </NavLink>
                   </li>
@@ -47,15 +47,15 @@ export default function ({ mode, toggle }) {
                     <hr className={`dropdown-divider ${mode.bg === "dark" ? "bg-light" : ""}`} />
                   </li>
                   <li>
-                    <NavLink className={`dropdown-item ${mode.bg === "dark" ? "text-light" : ""}`} to="#">
-                      Word to PDF
+                    <NavLink className={`dropdown-item bg-${mode.bg} text-${mode.bg === "dark" ? "light" : "dark"}`} to="/Auto-PDF-Rotater">
+                      Auto PDF Rotator
                     </NavLink>
                   </li>
                   <li>
                     <hr className={`dropdown-divider ${mode.bg === "dark" ? "bg-light" : ""}`} />
                   </li>
                   <li>
-                    <NavLink className={`dropdown-item ${mode.bg === "dark" ? "text-light" : ""}`} to="#">
+                    <NavLink className={`dropdown-item bg-${mode.bg} text-${mode.bg === "dark" ? "light" : "dark"}`} to="/PDF-Merge">
                       PDF Merge
                     </NavLink>
                   </li>
