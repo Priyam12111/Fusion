@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
 const PDFmerger = ({ mode }) => {
     const [file, setFile] = useState(null);
     const [message, setMessage] = useState('');
-
+    useEffect(() => {
+        document.title = 'Fusion - PDF Merge';
+    }, []);
     const handleFileChange = (e) => {
         setFile(e.target.files[0]);  // Update state with selected file
     };

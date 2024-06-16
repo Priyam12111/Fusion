@@ -9,8 +9,14 @@ li {
 .bg-light2 {
   background: white;
 }
+.bg-light3 {
+  background: whitesmoke;
+}
 .bg-dark2 {
   background: rgb(38, 40, 41);
+}
+.bg-dark3 {
+  background: #8f52cc27;
 }
 .main {
   height: 100vh;
@@ -60,6 +66,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb0kvLZUCWGeWgIgMzIUpUHgQypNroOEb5Pg&s);
 }
 
 .main-container > .cards > .card {
@@ -73,6 +80,8 @@ img {
   cursor: pointer;
   border: 1px solid black;
   border-radius: 10px;
+  background-color: rgb(31, 30, 29);
+  color: black;
 }
 
 .p2w {
@@ -93,8 +102,8 @@ img {
   background-size: 80%;
 }
 .main-container > .cards > .card:hover {
-  background-color: rgb(31, 30, 29);
-  color: black;
+  background-color: rgb(231, 229, 229);
+  color: whitesmoke;
 }
 
 .search_container {

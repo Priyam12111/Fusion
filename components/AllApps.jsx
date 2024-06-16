@@ -14,7 +14,7 @@ const AllApps = ({ mode }) => {
                     </div>
                 </div>
             </div >
-            <div className="cards">
+            <div className="cards mt-3">
                 <div className="p2w card">
                     <NavLink to="/PdftoDoc">
                         <h2>PDF to Word Conversion</h2>

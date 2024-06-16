@@ -24,7 +24,9 @@ function App() {
     }));
   };
 
-
+  useEffect(() => {
+    document.title = 'Fusion - Services';
+  }, []);
 
   const router = createBrowserRouter([
     {
@@ -36,7 +38,7 @@ function App() {
     },
     {
       path: "/Apps",
-      element: <div className={`bg-${mode.bg}2 main`}>
+      element: <div className={`bg-${mode.bg}3 main`}>
         <Navbar mode={mode} toggle={toggle} />
         <AllApps mode={mode.bg} />
       </div>

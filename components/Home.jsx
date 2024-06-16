@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 export default function Home({ mode }) {
+    useEffect(() => {
+        document.title = 'Fusion - Home';
+    }, []);
     return (
         <div className="container">
             <div className={`jumbotron p-3 p-md-5 text-${mode === "dark" ? "light" : "dark"} rounded bg-${mode}`}>
