@@ -19,6 +19,6 @@ To install PDF Fusion, you can clone the repository and install the required dep
 git clone <repository_url>
 cd pdf-fusion
 pip install -r requirements.txt
-
+```
 ## Live Preview on netlify
 https://main--shiny-bubblegum-e6a5ad.netlify.app/
