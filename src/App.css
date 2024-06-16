@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  margin-right: 10px;
+}
+.bg-light2 {
+  background: white;
+}
+.bg-dark2 {
+  background: rgb(38, 40, 41);
+}
+.main {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+.navbar {
+  height: fit-content;
+  width: 100%;
+}
+.navbar {
+  margin-top: 0;
+  padding-top: 0;
+}
+nav {
+  padding: 0;
+  border-bottom: 1px solid white;
+}
+.dropdown-item:hover {
+  background-color: white !important;
+  color: black !important; /* Adjust text color if needed */
+}
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 15px 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  img {
+    display: none;
+  }
+}
+
+/* AllApps */
+.main-container > .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.main-container > .cards > .card {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.p2w {
+  background-image: url("https://s.smallpdf.com/static/cms/f/102628/300x180/6cee7e6760/0b0040d43c285926eb01.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 100px;
+}
+.main-container > .cards > .card:hover {
+  background-color: rgb(31, 30, 29);
+  color: black;
+}
+
+.search_container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search_container input[type="file"] {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search_container button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search_container button:hover {
+  background-color: #45a049;
+}
+/* AllApps/ */
