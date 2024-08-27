@@ -16,7 +16,7 @@ const PdftoDoc = () => {
             const formData = new FormData();
             formData.append('file', file);
 
-            const response = await axios.post('http://127.0.0.1:5000/convert', formData, {
+            const response = await axios.post('https://priyam144.pythonanywhere.com/convert', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -35,7 +35,7 @@ const PdftoDoc = () => {
     };
     const handleDownload = async (filename) => {
         try {
-            const response = await axios.get(`http://127.0.0.1:5000/download/${filename}`, {
+            const response = await axios.get(`https://priyam144.pythonanywhere.com/download/${filename}`, {
                 responseType: "blob"
             })
             setMessage("File download is starting in 3 seconds...");
