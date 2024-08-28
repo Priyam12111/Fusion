@@ -21,4 +21,4 @@ cd pdf-fusion
 pip install -r requirements.txt
 ```
 ## Live Preview on netlify
-https://main--shiny-bubblegum-e6a5ad.netlify.app/
+https://fusion-livid.vercel.app/
