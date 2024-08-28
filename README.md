@@ -20,5 +20,5 @@ git clone https://github.com/Priyam12111/Fusion/
 cd pdf-fusion
 pip install -r requirements.txt
 ```
-## Live Preview on netlify
+## Live Preview on Vercel
 https://fusion-livid.vercel.app/
