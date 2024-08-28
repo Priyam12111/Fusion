@@ -28,7 +28,7 @@ const AllApps = ({ mode }) => {
                 </NavLink>
 
                 <NavLink className="pdfm card" to="/merge_pdf">
-                    <NavLink to={"/PDF-Merge"}>
+                    <NavLink to={"/merge_pdf"}>
                         <h2>
                             PDF Merge
                         </h2>
