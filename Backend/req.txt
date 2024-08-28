@@ -2,3 +2,4 @@ flask
 flask_cors
 pdf2docx
 uvicorn
+PyPDF2

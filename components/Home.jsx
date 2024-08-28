@@ -6,7 +6,7 @@ export default function Home({ mode }) {
     }, []);
     return (
         <div className="container">
-            <div className={`jumbotron p-3 p-md-5 text-${mode === "dark" ? "light" : "dark"} rounded bg-${mode}`}>
+            <div className={`jumbotron p-3 p-md-5 text-dark rounded bg-light3`}>
                 <div className="col-md-6 px-0">
                     <h1 className="display-4 font-italic">
                         Enhance Your PDF Handling Skills

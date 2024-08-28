@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-const PdftoDoc = () => {
+const PdftoDoc = ({ mode }) => {
     const [file, setFile] = useState(null);
     const [message, setMessage] = useState('');
     useEffect(() => {
-        document.title = 'Fusion - PDF to Doc';
+        document.title = 'Fusion | PDF to WORD | Convert PDF to WORD';
     }, []);
     const handleFileChange = (e) => {
         setFile(e.target.files[0]);  // Update state with selected file
@@ -12,7 +12,7 @@ const PdftoDoc = () => {
 
     const handleUpload = async () => {
         try {
-            setMessage("File Uploading 1/1")
+            setMessage("File Uploading...")
             const formData = new FormData();
             formData.append('file', file);
 
@@ -30,7 +30,7 @@ const PdftoDoc = () => {
             }
         } catch (error) {
             console.error('Error uploading file:', error);
-            setMessage('Failed to upload file.');
+            setMessage('Failed to upload file');
         }
     };
     const handleDownload = async (filename) => {
@@ -56,12 +56,12 @@ const PdftoDoc = () => {
         }
     };
     return (
-        <div className="search_container">
-            {/* Add onChange handler to input element */}
+        <div className={`search_container bg-${mode} text-${mode === "dark" ? "light" : "dark"}`}>
             <input type="file" name="pdf" id="PdfUpload" accept="application/pdf" onChange={handleFileChange} />
-            <button onClick={handleUpload}>Upload PDF</button>
-            {message && <p>{message}</p>}
+            <button class="button-67" role="button" style={{ backgroundColor: `${mode == "dark" ? "#040400" : "#f5f5fa"}`, color: '#9c8fe1' }} onClick={handleUpload}>Upload</button>
+            {message && <div className='m-5 p-1 bg-dark3'>{message}</div>}
         </div>
+
     );
 };
 

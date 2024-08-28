@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
 li {
   list-style: none;
   margin-right: 10px;
@@ -114,9 +115,11 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 900px;
+  width: 80%;
   justify-content: center;
-  margin: auto;
+  margin: 10px auto;
+  height: 400px;
+  overflow: hidden;
 }
 
 .search_container input[type="file"] {
@@ -126,21 +129,64 @@ img {
   border-radius: 4px;
 }
 
-.search_container button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.search_container button:hover {
-  background-color: #45a049;
-}
 .heading {
   cursor: pointer;
 }
-/* AllApps/ */
+/* Button/ */
 
-/*  */
+/* CSS */
+.button-67 {
+  align-items: center;
+  border: 0;
+  border-radius: 8px;
+
+  box-shadow: -4px 2px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17;
+  box-sizing: border-box;
+  color: #2a1f62;
+  cursor: pointer;
+  display: flex;
+  font-family: "Cascadia Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
+  font-size: 1rem;
+  justify-content: center;
+  line-height: 1.5rem;
+  padding: 15px;
+  position: relative;
+  text-align: left;
+  transition: 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+  width: max-content;
+  word-break: normal;
+  word-spacing: normal;
+}
+
+.button-67:hover {
+  background: #f8f8ff;
+  box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+}
+
+@media (min-width: 768px) {
+  .button-67 {
+    padding: 24px;
+  }
+}
+
+/* Default styles for the input */
+.form-control {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Placeholder color for light mode */
+.bg-light::placeholder {
+  color: #888; /* Light gray */
+}
+
+/* Placeholder color for dark mode */
+.bg-dark::placeholder {
+  color: #ddd; /* Dark gray */
+}

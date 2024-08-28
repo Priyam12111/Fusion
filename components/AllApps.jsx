@@ -15,25 +15,25 @@ const AllApps = ({ mode }) => {
                 </div>
             </div >
             <div className="cards mt-3">
-                <div className="p2w card">
-                    <NavLink to="/PdftoDoc">
+                <NavLink className="p2w card" to="/pdf_to_docx">
+                    <NavLink to="/pdf_to_docx">
                         <h2>PDF to Word Conversion</h2>
                     </NavLink>
-                </div>
+                </NavLink>
 
-                <div className="apr card">
+                <NavLink className="apr card" to="/Auto-PDF-Rotater">
                     <NavLink to="/Auto-PDF-Rotater">
                         <h2>Auto PDF Rotate</h2>
                     </NavLink>
-                </div>
+                </NavLink>
 
-                <div className="pdfm card">
+                <NavLink className="pdfm card" to="/merge_pdf">
                     <NavLink to={"/PDF-Merge"}>
                         <h2>
                             PDF Merge
                         </h2>
                     </NavLink>
-                </div>
+                </NavLink>
 
             </div>
 

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import Navbar from '../components/Navbar'
 import Home from '../components/Home';
-import Greet from '../components/Greet';
 import PdftoDoc from '../Tools/PdftoDoc';
 import PdfRotator from '../Tools/PdfRotator';
 import {
@@ -33,7 +32,7 @@ function App() {
       path: "/",
       element: <div className={`bg-${mode.bg}2 main`}>
         <Navbar mode={mode} toggle={toggle} />
-        <Home mode={mode.bg === "dark" ? "light" : "dark"} />
+        <Home mode={mode.bg} />
       </div>,
     },
     {
@@ -44,30 +43,27 @@ function App() {
       </div>
     },
     {
-      path: "/PDF-Merge",
-      element: <div className={`bg-${mode.bg}2 main`}>
+      path: "/merge_pdf",
+      element: <div className={`bg-${mode.bg}3 main`}>
         <Navbar mode={mode} toggle={toggle} />
         <PDFmerger mode={mode.bg} />
       </div>
     },
     {
       path: "/Auto-PDF-Rotater",
-      element: <div className={`bg-${mode.bg}2 main`}>
+      element: <div className={`bg-${mode.bg}3 main`}>
         <Navbar mode={mode} toggle={toggle} />
         <PdfRotator mode={mode.bg} />
       </div>
     },
     {
-      path: "/PdftoDoc",
-      element: <div className={`bg-${mode.bg}2 main`}>
+      path: "/pdf_to_docx",
+      element: <div className={`bg-${mode.bg}3 main`}>
         <Navbar mode={mode} toggle={toggle} />
-        <PdftoDoc />
+        <PdftoDoc mode={mode.bg} />
       </div>
     },
-    {
-      path: "/Greet/:Name",
-      element: <Greet />
-    }
+
   ]);
 
   return (

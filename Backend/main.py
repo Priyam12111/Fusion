@@ -3,22 +3,23 @@ from flask_cors import CORS#type:ignore
 import concurrent.futures
 import os
 from pdf2docx import Converter#type:ignore
+from PyPDF2 import PdfMerger#type:ignore
 import logging
+from io import BytesIO
+import threading
 
 app = Flask(__name__)
 CORS(app)
-
-# Directory to store converted files
+executor = concurrent.futures.ThreadPoolExecutor(max_workers=5)
 output_directory = 'Downloads'
 if not os.path.exists(output_directory):
     os.makedirs(output_directory)
 
-# Logging configuration
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Dictionary to keep track of conversion status
 conversion_status = {}
 
+# NORMAL FUNCTION
 def convert_pdf_to_docx(pdf_file, docx_file):
     try:
         cv = Converter(pdf_file)
@@ -30,6 +31,25 @@ def convert_pdf_to_docx(pdf_file, docx_file):
         logging.error(f"Error converting {pdf_file} to {docx_file}: {str(e)}")
         conversion_status[docx_file] = 'failed'
 
+def merge_files(files):
+    merger = PdfMerger()
+    merged_pdf_stream = BytesIO()
+
+    try:
+        for pdf_file in files:
+            merger.append(pdf_file)
+        
+        merger.write(merged_pdf_stream)
+        merger.close()
+        merged_pdf_stream.seek(0)
+        
+        return merged_pdf_stream
+
+    except Exception as e:
+        print(f"Error merging files: {e}")
+        return None
+
+# FLASK APIS
 @app.route('/convert', methods=['POST'])
 def convert():
     try:
@@ -55,6 +75,33 @@ def convert():
         logging.error(f"Error during conversion: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+
+# Create a thread pool executor
+@app.route('/merge_pdfs', methods=['POST'])
+def merge_pdfs():
+    if 'files' not in request.files:
+        return {'error': 'No files part in the request'}, 400
+
+    files = request.files.getlist('files')
+
+    if not files or len(files) == 0:
+        return {'error': 'No files uploaded'}, 400
+
+    # Use a thread pool to handle the merging task
+    future = executor.submit(merge_files, files)
+    merged_pdf_stream = future.result()
+
+    if not merged_pdf_stream:
+        return {'error': 'Failed to merge PDFs'}, 500
+
+    return send_file(
+        merged_pdf_stream,
+        as_attachment=True,
+        download_name='merged_document.pdf',
+        mimetype='application/pdf'
+    )
+
+# DOWNLOAD OUTPUTS
 @app.route('/download/<filename>', methods=['GET'])
 def download_file(filename):
     try:
