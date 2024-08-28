@@ -60,18 +60,37 @@ const PDFmerger = ({ mode }) => {
     };
 
     return (
-        <div className={`search_container bg-${mode} text-${mode === "dark" ? "light" : "dark"}`}>
-            <input
-                type="file"
-                name="pdf"
-                id="PdfUpload"
-                multiple
-                accept="application/pdf"
-                onChange={handleFileChange}
-            />
+        <>
+
+            {files.length == 0 &&
+                <div className={`search_container bg-${mode} text-${mode === "dark" ? "light" : "dark"}`}>
+                    <input
+                        type="file"
+                        name="pdf"
+                        id="PdfUpload"
+                        multiple
+                        accept="application/pdf"
+                        onChange={handleFileChange}
+                    />
+                    <button
+                        className="button-67"
+                        role="button"
+                        style={{
+                            backgroundColor: `${mode === "dark" ? "#040400" : "#f5f5fa"}`,
+                            color: '#9c8fe1',
+                        }}
+                        onClick={handleUpload}
+                    >
+                        Upload
+                    </button>
+                    {message && <div className='m-5 p-1 bg-dark3'>{message}</div>}
+
+                </div>
+
+            }
 
             {files.length > 0 && (
-                <div>
+                <div className={`search_container bg-${mode} text-${mode === "dark" ? "light" : "dark"}`}>
                     <h3>Reorder Files:</h3>
                     <ul>
                         {files.map((file, index) => (
@@ -92,23 +111,24 @@ const PDFmerger = ({ mode }) => {
                             </li>
                         ))}
                     </ul>
+                    <button
+                        className="button-67"
+                        role="button"
+                        style={{
+                            backgroundColor: `${mode === "dark" ? "#040400" : "#f5f5fa"}`,
+                            color: '#9c8fe1',
+                        }}
+                        onClick={handleUpload}
+                    >
+                        Upload
+                    </button>
+                    {message && <div className='m-5 p-1 bg-dark3'>{message}</div>}
                 </div>
             )}
 
-            <button
-                className="button-67"
-                role="button"
-                style={{
-                    backgroundColor: `${mode === "dark" ? "#040400" : "#f5f5fa"}`,
-                    color: '#9c8fe1',
-                }}
-                onClick={handleUpload}
-            >
-                Upload
-            </button>
 
-            {message && <div className='m-5 p-1 bg-dark3'>{message}</div>}
-        </div>
+        </>
+
     );
 };
 
